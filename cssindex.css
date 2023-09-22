@@ -162,13 +162,13 @@ h2{
   }
 
   .algo::before{
-    content: "Architecture Des Ordinateurs \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 5";
+    content: "Algorithmique Et Structure De Données 3  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 6";
   }
   .mn::before{
     content: "Méthodes Numériques  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 2  Créd 4";
   }
   .archi::before{
-    content: "Algorithmique Et Structure De Données 3  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3 Créd 6";
+    content: "Architecture Des Ordinateurs  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3 Créd 5";
   }
   .lg::before{
     content: "Logique Mathématique \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 2  Créd 4";
