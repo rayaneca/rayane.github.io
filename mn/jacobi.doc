@@ -1,0 +1,43 @@
+import numpy as np
+
+n = int(input("Input L'order: "))
+# Matrice a
+a = np.zeros((n,n))
+for i in range(n):
+    for j in range(n):
+        a[i,j]=float(input("A["+str(i)+","+str(j)+"]:"))
+# le vecteur y
+y = np.zeros(n)
+for i in range(n):
+    y[i]=float(input("Y["+str(i)+"]:"))
+
+# le tableau x et iteration sous form d'une matrice
+x = np.zeros((2, n))
+for i in range(n):
+    x[0, i] = float(input("x["+str(i)+"] = "))
+
+ErrAc = float(input("Input L'errur acciptable: ")) # Erreur acciptable
+Err = 100 # Erreur
+nbrIt = 1 # we start from 1, because 0 is already given as x1 = x2 = x3 = 0
+while ( Err > ErrAc ):
+    for it in range(1,2):
+        for i in range(n):
+            S = 0
+            for j in range (n):
+                if (i != j) : # exclude a00, a11, a22
+                    S = S + (a[i, j]*x[it-1, j]) 
+            x[it,i]=(y[i] - S)/a[i, i]
+        print("it "+str(nbrIt)+":", x[it, :])
+        
+        # Update la valeur de l'Erreur
+        E = np.zeros(n) # tableau n7ato fiha نتيجة الناقص .. الفرق بين القيم الجديدة و القيم القديمة
+        for k in range(n):
+            E[k] = abs(x[it, k] - x[it-1, k]) # Substract la valeur jdida w la valeur l9dima ta3 kol min x0 x1 x2
+            # la valeur tkhroj b - (negative), abs traja3ha positive
+        Err = max(E) # we take the max between the 3 new values ali 7sabnahom
+        
+        # changer les valeurs de x0 x1 x2 avec les nouvelles valeurs pour la 2eme iteration
+        for xch in range(1, 2):
+            for i in range(n):
+                x[xch-1, i] = x[xch, i]
+    nbrIt += 1

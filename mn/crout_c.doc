@@ -1,0 +1,57 @@
+import numpy as np 
+# The ordere :
+n = int(input("enter lorder de cette matrix:"))
+# Give "A" matrix values :
+a = np.zeros((n,n))
+for i in range(n):
+    for j in range(n):
+        a[i,j]=float(input("A["+str(i)+","+str(j)+"]:"))
+# Give "B" matrix values :
+b=np.zeros(n)
+for i in range(n):
+    b[i]=float(input("B["+str(i)+"]:"))
+x,y=n*[0],n*[0]
+U=np.identity(n)
+L=0*np.identity(n)
+o=np.linalg.solve(a, b)
+print("the computere solve using __linalg__")
+print(o)
+def LU(a):
+    for i in range(n):
+        if(i==0):
+            for j in range(n):
+                L[j,i]=a[j,i]
+            for j in range(i+1,n):
+                U[i,j]=a[i,j]/L[i,i]
+        elif (i<n-1):
+            for j in range(i,n):
+                L[j,i]=a[j,i]-np.dot(L[j],U[:,j])
+            for j in range(i+1,n):
+                U[i,j]=(a[i,j]-np.dot(L[i],U[:,j]))/L[i,i]
+        else :
+            L[i,i]=a[i,i]-np.dot(L[i], U[:,i])
+    return L , U
+
+def cal_x(L,U,b):
+    for i in range(n):
+        s=0
+        for k in range(i):
+            s=s+(L[i,k]*y[k])
+        y[i]=(b[i]-s)/L[i,i]    
+    for i in range(n-1,-1,-1):
+        s=0
+        for k in range(i+1,n):
+            s=s+(U[i,k]*x[k])
+        x[i] = ( y[i]-s)
+    return x,y
+            
+L , U =LU(a)
+print("L:")
+print(L)
+print("U:")
+print(U)
+x,y=cal_x(L,U, b)
+print("y:")
+print(y)
+print("x:")
+print(x)
