@@ -10,26 +10,114 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    /* backdrop-filter: blur(5px);*/
   }
-.s3,.s4{
+ 
+ .d1,.d2{
+  display: none;
+ }
+.l1 + .labelL1 ,.l2 +.labelL2{
+  display: inline-block;
+  cursor: pointer;
+ 
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  background-color: rgba(10, 9, 9, 0.945);
+  border-radius: 150px;
+  box-shadow: 0 0 10px rgba(247, 23, 23, 0.87);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.l1 ,.l2 {
+  display: none; 
+ }
+
+  #toggleCheckbox:checked ~ .labelL1  {
+    background-color: rgba(0, 0, 0, 0.945);
+    box-shadow: 0 0 10px rgba(226, 2, 226, 0.774);
+    
+    width: 0px;
+    height: 0px;
+    margin-left: 0%;
+    margin-right: 0%;
+    opacity: 0;
+    
+    
+   
+  }
+
+  #toggleCheckbox2:checked ~ .labelL2  {
+    background-color: rgba(0, 0, 0, 0.945);
+    box-shadow: 0 0 10px rgba(155, 2, 226, 0.774);
+    
+    width: 0px;
+    height: 0px;
+    margin-left: 0%;
+    margin-right: 0%;
+    opacity: 0;
+
+  }
+
+ 
+  #toggleCheckbox:checked ~ .labelL1 h1  {
+    
+    color: rgba(250, 0, 0, 0.616);
+    font-size: 1px;
+  }
+
+ 
+  #toggleCheckbox2:checked ~ .labelL2 h1  {
+    
+    color: rgba(250, 0, 0, 0.616);
+    font-size: 1px;
+  }
+
+  
+    
+  #toggleCheckbox:checked ~ .d1 {
+   
+    display: flex;
+  }
+  #toggleCheckbox2:checked ~ .d2 {
+    display: flex;
+  }
+ 
+ 
+  
+  
+ 
+.s3,.s4,.s5,.s6{
    
     padding: 30px;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: center;
     background-color: rgba(29, 29, 29, 0.945);
-    border-radius: 50px;
+    border-radius: 150px;
     box-shadow: 0 0 10px rgba(247, 23, 23, 0.774);
+    transition: all 0.3s ease;
+  
+    
 }
-h1{
-    text-align: center;
-    color: rgba(248, 76, 76, 0.616);
-    font-size: 120px;
-}
-.s3:hover h1 , .s4:hover h1{
+
+.s3:hover h1 , .s4:hover h1 ,.s5:hover h1 ,.s6:hover h1,.labelL1:hover h1 ,.labelL2:hover h1{
     color: rgb(255, 0, 0);
 }
-.s3:hover,.s4:hover {
+.l1:hover ,.labelL1:hover,.l2:hover ,.labelL2:hover {
+ 
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  background-color: rgb(5, 5, 5);
+  border-radius: 90px;
+  box-shadow: 0 0 40px rgb(255, 0, 0);
+  
+  
+}
+.s3:hover,.s4:hover ,.s5:hover ,.s6:hover  {
     padding: 30px;
     width: 60%;
     margin-left: 20%;
@@ -38,7 +126,15 @@ h1{
     background-color: rgb(5, 5, 5);
     border-radius: 90px;
     box-shadow: 0 0 40px rgb(255, 0, 0);
+    
+    
 }
+h1{
+  text-align: center;
+  color: rgba(248, 76, 76, 0.616);
+  font-size: 120px;
+}
+
 a{
     color: red;
     font-size: 40px;
