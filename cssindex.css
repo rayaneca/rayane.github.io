@@ -236,12 +236,12 @@ h2{
     color: rgb(255, 0, 0);
 }
 
-.algo,.mn,.archi,.lg,.tg,.si,.thl,.se,.bdd,.reseaux,.poo,.dew {
+.algo,.mn,.archi,.lg,.tg,.si,.thl,.se,.bdd,.reseaux,.poo,.dew,.pl,.se2,.prob,.Compilation,.ihm,.gl {
     position: relative;
     display: inline-block;
   }
 
-  .algo::before, .mn::before, .archi::before, .lg::before, .tg::before, .si::before, .thl::before, .se::before, .bdd::before, .reseaux::before, .poo::before, .dew::before  {
+  .se2::before,.prob::before,.Compilation::before,.gl::before,.ihm::before,.pl::before,.algo::before, .mn::before, .archi::before, .lg::before, .tg::before, .si::before, .thl::before, .se::before, .bdd::before, .reseaux::before, .poo::before, .dew::before  {
     
     position: absolute;
     text-align: center;
@@ -256,7 +256,30 @@ h2{
     transition: opacity 0.3s;
     
   }
+  .pl::before{
+    content: "Programmation Linéaire  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 2  Créd 4";
 
+  }
+  .ihm::before{
+    content: "interactions homme-machine  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 5";
+
+  }
+  .gl::before{
+    content: "Génie Logiciel  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 5";
+
+  }
+  .Compilation::before{
+    content: "Compilation  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 5";
+
+  }
+  .se2::before{
+    content: "Systèmes D'exploitation 2  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 5";
+
+  }
+  .prob::before{
+    content: "Probabilités  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 2  Créd 4";
+
+  }
   .algo::before{
     content: "Algorithmique Et Structure De Données 3  \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 3  Créd 6";
   }
@@ -294,7 +317,7 @@ h2{
     content: "Developpement D'applications Web \00a0\00a0\00a0\00a0\00a0\00a0\00a0 Coef 2  Créd 4";
   }
   
-  .algo:hover::before, .mn:hover::before, .archi:hover::before, .lg:hover::before, .tg:hover::before, .si:hover::before, .thl:hover::before, .se:hover::before, .bdd:hover::before, .reseaux:hover::before, .poo:hover::before, .dew:hover::before {
+  .ihm:hover:before,.gl:hover::before,.Compilation:hover::before,.prob:hover:before,.se2:hover::before,.pl:hover::before,.algo:hover::before, .mn:hover::before, .archi:hover::before, .lg:hover::before, .tg:hover::before, .si:hover::before, .thl:hover::before, .se:hover::before, .bdd:hover::before, .reseaux:hover::before, .poo:hover::before, .dew:hover::before {
     opacity: 1;
   }
   
